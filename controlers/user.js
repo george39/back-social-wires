@@ -143,5 +143,5 @@ function getUser(req, res) {
 module.exports = {
     saveUser,
     login,
-    getUser,    
+    getUser,
 };
