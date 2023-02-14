@@ -10,11 +10,8 @@ var app = express();
 CARGAR RUTAS
 ************************************************************************/
 var userRoutes = require('./routes/user');
-// var providerRoutes = require('./routes/provider');
-// var productRoutes = require('./routes/product');
-// var orderProviderRoutes = require('./routes/order-provider');
-// var orderClienteRoutes = require('./routes/order-client');
-// var uploadRoutes = require('./routes/upload');
+var messageRoutes = require('./routes/message');
+
 
 
 /***********************************************************************
@@ -41,10 +38,7 @@ app.use(function(req, res, next) {
 RUTAS BODY-PARSER
 ************************************************************************/
 app.use('/', userRoutes);
-// app.use('/', providerRoutes);
-// app.use('/', productRoutes);
-// app.use('/', orderProviderRoutes);
-// app.use('/', orderClienteRoutes);
-// app.use('/upload', uploadRoutes);
+app.use('/', messageRoutes);
+
 
 module.exports = app;
