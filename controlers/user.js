@@ -88,15 +88,15 @@ function login(req, res) {
             if (user) {
                 bcrypt.compare(password, user.password, (err, check) => {
                     if (check) {
-
-                        if (params.gettoken) {
+                        if (params.gettoken === 'null') {
                             res.status(200).send({
                                 token: jwt.createToken(user)
                             });
                         } else {
 
                             res.status(200).send({
-                                user
+                                user,
+                                token: jwt.createToken(user)
                             });
                         }
 

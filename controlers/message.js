@@ -12,6 +12,7 @@ function postMessage(req, res) {
     var params = req.body;
 
     if (params.message) {
+        message.title = params.title;
         message.message = params.message;
         message.user = req.user.sub;
         message.save((err, messagePost) => {
